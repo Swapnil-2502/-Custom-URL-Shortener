@@ -1,11 +1,25 @@
-const sessionIdtoUserMap = new Map();
+// const sessionIdtoUserMap = new Map();
 
-function setUser(id, user){
-    sessionIdtoUserMap.set(id,user)
+const jwt = require("jsonwebtoken");
+const secret = "Swapnil$25!"
+
+//This function will make tokens for me.
+function setUser(user){
+    return jwt.sign({
+        id: user._id,
+        email: user.email
+    },secret)
 }
 
-function getUser(id){
-    return sessionIdtoUserMap.get(id);
+
+function getUser(token){
+    if(!token) return null;
+    try{
+        return jwt.verify(token,secret)
+    }catch{
+        return null;
+    }
+    
 }
 
 module.exports = {
