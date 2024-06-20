@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        form input{
+            width: 140px;
+            margin-bottom: 10px;
+        }
+        form button{
+            width: 120px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <h1>Signup</h1>
+    <form action="/user" method="post">
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="Enter your name">
+
+        <label>Email</label>
+        <input type="text" name="email" placeholder="Enter your email">
+
+        <label>Password</label>
+        <input type="text" name="password" placeholder="Enter your password">
+
+        <button type="submit">Sign up</button>
+    </form>
+</body>
+</html>
